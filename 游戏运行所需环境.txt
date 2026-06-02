@@ -1,0 +1,94 @@
+===========================================
+          德州扑克游戏 - 运行环境说明
+===========================================
+
+一、操作系统要求
+----------------
+- Windows 10/11 (64位)
+- macOS 10.14+
+- Linux (Ubuntu 18.04+, CentOS 7+)
+
+二、核心运行环境
+----------------
+1. Node.js
+   - 版本要求: v18.0.0 或更高
+   - 建议版本: v20.x LTS
+   - 下载地址: https://nodejs.org/
+
+2. npm (Node Package Manager)
+   - 随 Node.js 一同安装
+   - 版本要求: v9.0.0 或更高
+
+三、项目技术栈
+--------------
+前端框架:
+  - React 18.2.0
+  - TypeScript 5.3.3
+
+构建工具:
+  - Vite 5.1.4
+
+UI样式:
+  - TailwindCSS 3.4.1
+  - Framer Motion 11.0.8 (动画库)
+
+状态管理:
+  - Zustand 4.5.2
+
+桌面应用:
+  - Electron 42.3.0
+  - Electron Builder 26.8.1
+
+代码检查:
+  - ESLint 8.56.0
+
+四、安装依赖步骤
+----------------
+1. 打开终端/命令行，进入项目目录
+2. 执行命令: npm install
+3. 等待依赖安装完成
+
+五、运行方式
+------------
+开发模式 (浏览器预览):
+  npm run dev
+
+开发模式 (Electron窗口):
+  npm run dev          (启动Vite开发服务器)
+  npm run electron     (启动Electron窗口)
+
+生产构建:
+  npm run build        (构建前端资源)
+  npm run electron:build   (构建完整Electron应用)
+  npm run electron:build:win (仅构建Windows版本)
+
+预览构建结果:
+  npm run preview
+
+六、项目目录结构
+----------------
+├── components/     # React组件
+├── define/         # 类型定义
+├── dist/           # 构建输出目录
+├── electron/       # Electron主进程代码
+├── engine/         # 游戏引擎逻辑
+├── hooks/          # 自定义React Hooks
+├── src/            # 源文件目录
+├── store/          # Zustand状态管理
+├── utils/          # 工具函数
+
+七、端口占用说明
+----------------
+开发模式默认使用端口 5173
+若端口被占用，Vite会自动递增端口
+
+八、注意事项
+------------
+1. 首次运行需确保网络畅通，用于下载依赖
+2. Electron可能需要下载二进制文件，建议配置国内镜像
+3. 构建Electron应用需确保系统满足electron-builder要求
+4. Windows构建需要NSIS工具，通常会自动安装
+
+===========================================
+                  版本: 1.0.0
+===========================================
