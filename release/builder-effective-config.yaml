@@ -1,0 +1,28 @@
+directories:
+  output: release
+  buildResources: assets
+appId: com.texasholdem.game
+productName: 德州扑克
+files:
+  - filter:
+      - dist/**/*
+      - electron/**/*
+      - assets/**/*
+win:
+  target:
+    - target: nsis
+      arch:
+        - x64
+    - target: portable
+      arch:
+        - x64
+  icon: assets/icon.ico
+nsis:
+  oneClick: false
+  allowToChangeInstallationDirectory: true
+  createDesktopShortcut: true
+  createStartMenuShortcut: true
+  shortcutName: 德州扑克
+portable:
+  artifactName: 德州扑克-便携版.exe
+electronVersion: 42.3.0
